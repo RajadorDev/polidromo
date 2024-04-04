@@ -1,4 +1,19 @@
 
+/*
+  
+  Rajador Developer
+
+  ▒█▀▀█ ░█▀▀█ ░░░▒█ ░█▀▀█ ▒█▀▀▄ ▒█▀▀▀█ ▒█▀▀█ 
+  ▒█▄▄▀ ▒█▄▄█ ░▄░▒█ ▒█▄▄█ ▒█░▒█ ▒█░░▒█ ▒█▄▄▀ 
+  ▒█░▒█ ▒█░▒█ ▒█▄▄█ ▒█░▒█ ▒█▄▄▀ ▒█▄▄▄█ ▒█░▒█
+
+  GitHub: https://github.com/RajadorDev
+
+  Discord: rajadortv
+
+
+*/
+
 var checkingAnimation = false
 
 const ALLOW_LETTERS = 'abcdefghijklmnopqrstuvwxyz'
@@ -234,4 +249,4 @@ function showElements()
 	const button = box.querySelector('#check-button')
 	button.setAttribute('disabled', true)
 	randomExemple()
-  }
+}
