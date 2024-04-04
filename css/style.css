@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Workbench&display=swap');
+
+* {
+	padding: 0;
+	font-family: 'Poppins';
+	margin: 0;
+}
+
+@keyframes spawn {
+	from {
+		opacity: 0%;
+	}
+	to {
+		opacity: 100%;
+	}
+}
+
+
+@keyframes load {
+	0% {
+		rotate: 0deg;
+	}
+	100% {
+		rotate: 360deg;
+	}
+}
+
+@keyframes animatedLetter{
+	0% {
+		font-size: 40px;
+	}
+	50% {
+		font-size: 60px;
+	}
+	100 % {
+		font-size: 40px;
+	}
+}
+
+.title, .input-label, .word-input, #check-button {
+	animation-name: spawn;
+	animation-duration: 1.8s;
+	animation-timing-function: ease-in-out;
+}
+
+button, input[type="text"]{
+	cursor: pointer;
+}
+
+body {
+	box-sizing: border-box;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('../img/background.jpg');
+	background-size: cover;
+	background-repeat: none;
+}
+
+.title {
+	color: rgb(63,107,205);
+	text-align: center;
+	font-family: 'Workbench';
+	letter-spacing: 8px;
+}
+
+.box {
+	box-sizing: border-box;
+	background-color: white;
+	padding: 38px 70px;
+	color: rgb(111,111,111);
+	display: flex;
+	flex-direction: column;
+	border-radius: 9px;
+	margin: 100px auto 0 auto;
+	width: 85%;
+	height: 60%;
+	row-gap: 30px;
+	align-items: center;
+}
+
+.word-input {
+	width: 40%;
+	padding: 5px 0;
+	border: none;
+	border-bottom: 0.5px solid rgb(68,126,209);
+	text-align: center;
+	font-size: 17px;
+}
+
+.word-input:focus {
+	outline: none;
+	border-bottom: 4px solid rgb(68,126,209);
+}
+
+.word-input[disabled]{
+	border: none;
+	background-color: white;
+	font-family: 'Workbench';
+	color: rgb(58,103,190);
+	font-weight: bold;
+}
+
+.check-button {
+	background-color: rgb(70,124,200);
+	color: white;
+	padding: 8px 20px;
+	font-weight: bold;
+	font-size: 19px;
+	border: none;
+	border-radius: 2.5px;
+}
+
+#check-button[disabled]{
+	background-color: red;
+	cursor: not-allowed;
+}
+
+.loading {
+	border-radius: 50%;
+	border: 3.5px solid rgb(217,217,217);
+	border-top: 3.5px solid white;
+	background-color: transparent;
+	animation-name: load;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.check-animation{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	height: 50%;
+	width: 95%;
+	overflow: hidden;
+	gap: 19px;
+}
+
+.check-animation-letter {
+	flex-shrink: 0;
+	display: inline;
+	text-align: center;
+	font-family: 'Workbench';
+	color: rgb(63,107,205);
+	font-size: 40px;
+	box-sizing: border-box;
+	transition: color 1.5s ease-in-out;
+}
+
+.check-animation-letter-enabled {
+	animation-name: animatedLetter;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+}
+
+.check-animation-letter-true {
+	color: rgb(51,209,77);
+}
+
+.check-animation-letter-false {
+	color: red;
+}
+
+.input-label {
+	font-size: 15px;
+  }
