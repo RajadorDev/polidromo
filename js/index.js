@@ -43,16 +43,8 @@ function init()
 	input.addEventListener('input', 
 	function (e) 
 	{
-		let realword = ''
-		for (let letter of input.value)
-		{
-			if (ALLOW_LETTERS.includes(letter.toLowerCase()))
-			{
-				realword += letter
-			}
-		}
-		input.value = realword
-		if (realword.length > 1)
+		input.value = clearValues(input)
+		if (input.value.length > 1)
 		{
 			if (checkButton.hasAttribute('disabled'))
 			{
@@ -62,6 +54,12 @@ function init()
 			checkButton.setAttribute('disabled', 'true')
 		}
 	})
+	
+	if (input.value.length > 1 && checkButton.hasAttribute('disabled'))
+	{
+		checkButton.removeAttribute('disabled')
+	}
+	
 	randomExemple()
 }
 
@@ -249,4 +247,17 @@ function showElements()
 	const button = box.querySelector('#check-button')
 	button.setAttribute('disabled', true)
 	randomExemple()
+}
+
+function clearValues(input) 
+{
+	let realword = ''
+	for (let letter of input.value)
+	{
+		if (ALLOW_LETTERS.includes(letter.toLowerCase()))
+		{
+			realword += letter
+		}
+	}
+	return realword
 }
